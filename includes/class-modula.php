@@ -171,6 +171,8 @@ class Modula {
 					$image['thumbnail']   = $image_url[0];
 					$image['orientation'] = $attachment['orientation'];
 
+					$image['alt']         = (class_exists('Modula_SEO') ) ? apply_filters( 'modula_generate_alt_modal', $image, $post) : '';
+					
 					$modula_helper['items'][] = $image;
 
 	        	}
