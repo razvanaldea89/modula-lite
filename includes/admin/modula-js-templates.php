@@ -56,12 +56,14 @@
                         <div class="description">
                             <?php esc_html_e( 'Very important for SEO, the Alt Text describes the image.', 'modula-best-grid-gallery' ); ?>
                         </div>
-                        <?php 
+                        <# if ( data.alt != '' ) { #>
                         
-                            $empty_placeholder = get_option('modula_seo');
-                            
-                        ?> 
-                        <input type='text' name="alt_preview" value="<?php echo( $empty_placeholder['placeholder']) ?>"  disabled/>
+                        <input type='text' name="alt_preview" value="<?php echo Modula_SEO::get_placeholder_value() ?>"  disabled/>
+                        <# }else{ #>
+                        <input type='text' name="alt_preview" value="<?php echo Modula_SEO::get_defined_placeholder_value() ?>"  disabled/>
+                        <# } #>
+
+                        
                     </label>
 
                     <!-- Caption Text -->
