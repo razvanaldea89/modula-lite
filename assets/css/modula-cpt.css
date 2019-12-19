@@ -800,6 +800,7 @@ tr label.th-label {
 }
 .media-modal .modula-edit-popup .attachment-details .attachment-info .settings .setting div.description {
     clear: both;
+    width: 100%;
     float: left;
     margin: 5px 0 0 0;
     text-align: left;

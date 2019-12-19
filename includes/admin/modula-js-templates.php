@@ -46,6 +46,13 @@
                         <div class="description">
                             <?php esc_html_e( 'Image titles can take any type of HTML.', 'modula-best-grid-gallery' ); ?>
                         </div>
+                        <# if ( data.title != '' ) { #>
+                       
+                        <p> <?php echo class_exists('Modula_SEO')? Modula_SEO::get_defined_title_placeholder_value() : '' ?>"  </p>
+                        <# }else{ #>
+                        
+                        <p> <?php echo class_exists('Modula_SEO')? Modula_SEO::get_title_placeholder_value() : '' ?> </p> 
+                        <# } #>
                     </label>
                   
                     
@@ -56,15 +63,16 @@
                         <div class="description">
                             <?php esc_html_e( 'Very important for SEO, the Alt Text describes the image.', 'modula-best-grid-gallery' ); ?>
                         </div>
+                        
                         <# if ( data.alt != '' ) { #>
                         
-                        <input type='text' name="alt_preview" value="<?php echo Modula_SEO::get_placeholder_value() ?>"  disabled/>
+                        <p> <?php echo class_exists('Modula_SEO')? Modula_SEO::get_defined_placeholder_value() : '' ?>"  </p>
                         <# }else{ #>
-                        <input type='text' name="alt_preview" value="<?php echo Modula_SEO::get_defined_placeholder_value() ?>"  disabled/>
-                        <# } #>
-
                         
+                        <p> <?php echo class_exists('Modula_SEO')? Modula_SEO::get_placeholder_value() : '' ?> </p> 
+                        <# } #>
                     </label>
+                        
 
                     <!-- Caption Text -->
                     <label class="setting">
@@ -72,6 +80,13 @@
                         <textarea name="description">{{ data.description }}</textarea>
                         <div class="description">
                         </div>
+                        <# if ( data.description != '' ) { #>
+                        
+                        <p> <?php echo class_exists('Modula_SEO')? Modula_SEO::get_defined_caption_placeholder_value() : '' ?>"  </p>
+                        <# }else{ #>
+                        
+                        <p> <?php echo class_exists('Modula_SEO')? Modula_SEO::get_caption_placeholder_value() : '' ?> </p> 
+                        <# } #>
                     </label>
 
                     <!-- Alignment -->
